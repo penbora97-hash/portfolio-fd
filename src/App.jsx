@@ -22,7 +22,7 @@ import CertificateForm from "./pages/admin/CertificateForm";
 import LearningList from "./pages/admin/LearningList";
 import LearningForm from "./pages/admin/LearningForm";
 import NotFound from "./pages/NotFound";
-import CustomCursor from "./components/ui/CustomCursor";
+import CustomCursor from "./components/UI/CustomCursor";
 
 // ==================== PAGE WRAPPER ====================
 function PageWrapper({ children }) {
