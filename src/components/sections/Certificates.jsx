@@ -57,19 +57,15 @@ export default function Certificates({ certificates = [] }) {
                 key={cert.id}
                 className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#141414] overflow-hidden transition-all duration-500 hover:border-[#f59e0b]/50 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]"
               >
-                {/* Image - ចុចបាន */}
+                {/* ✅ Image - កែសម្រួលរួច */}
                 {cert.image_path ? (
                   <button
                     type="button"
-                    onClick={() =>
-                      setSelectedImage(
-                        `${import.meta.env.VITE_STORAGE_URL}/${cert.image_path}`,
-                      )
-                    }
+                    onClick={() => setSelectedImage(cert.image_path)} // ប្រើ URL ផ្ទាល់ពី Cloudinary
                     className="relative h-64 w-full overflow-hidden bg-gray-100 dark:bg-gray-900 block group/img cursor-zoom-in"
                   >
                     <img
-                      src={`${import.meta.env.VITE_STORAGE_URL}/${cert.image_path}`}
+                      src={cert.image_path} // ប្រើ URL ផ្ទាល់ពី Cloudinary
                       alt={cert.title}
                       className="h-full w-full object-contain bg-gray-50 dark:bg-gray-950 transition-transform duration-700 group-hover/img:scale-105"
                       onError={(e) => {

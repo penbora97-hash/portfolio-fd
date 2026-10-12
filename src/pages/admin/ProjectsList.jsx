@@ -45,7 +45,7 @@ export default function ProjectsList() {
         </div>
         <Link
           to="/admin/projects/new"
-          className="flex items-center gap-2 rounded-lg bg-[#84cc16] px-5 py-2.5 text-sm font-semibold text-black hover:bg-[#65a30d] transition-all duration-300"
+          className="flex items-center gap-2 rounded-lg bg-[#f59e0b] px-5 py-2.5 text-sm font-semibold text-black hover:bg-[#fbbf24] transition-all duration-300"
         >
           <FaPlus /> New Project
         </Link>
@@ -65,6 +65,7 @@ export default function ProjectsList() {
           <table className="w-full text-left text-sm">
             <thead className="border-b border-gray-800 text-xs uppercase tracking-widest text-gray-500">
               <tr>
+                <th className="px-6 py-4">Image</th>
                 <th className="px-6 py-4">Title</th>
                 <th className="px-6 py-4">Description</th>
                 <th className="px-6 py-4 text-right">Actions</th>
@@ -76,6 +77,22 @@ export default function ProjectsList() {
                   key={p.id}
                   className="hover:bg-gray-800/50 transition-colors"
                 >
+                  {/* ✅ Image Column */}
+                  <td className="px-6 py-4">
+                    {p.thumbnail ? (
+                      <img
+                        src={p.thumbnail}
+                        alt={p.title}
+                        className="w-16 h-12 object-cover rounded"
+                        onError={(e) => {
+                          e.target.src =
+                            "https://via.placeholder.com/64x48/141414/f59e0b?text=?";
+                        }}
+                      />
+                    ) : (
+                      <span className="text-gray-500 text-xs">No image</span>
+                    )}
+                  </td>
                   <td className="px-6 py-4 font-medium text-white">
                     {p.title}
                   </td>

@@ -38,9 +38,13 @@ export default function CertificatesList() {
           render: (r) =>
             r.image_path ? (
               <img
-                src={`${import.meta.env.VITE_STORAGE_URL}/${r.image_path}`}
+                src={r.image_path} // ✅ ប្រើ URL ផ្ទាល់ពី Cloudinary
                 alt={r.title}
                 className="w-16 h-12 object-cover rounded"
+                onError={(e) => {
+                  e.target.src =
+                    "https://via.placeholder.com/64x48/141414/f59e0b?text=?";
+                }}
               />
             ) : (
               <span className="text-gray-500 text-xs">No image</span>
@@ -54,4 +58,3 @@ export default function CertificatesList() {
     />
   );
 }
-    

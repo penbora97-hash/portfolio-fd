@@ -44,11 +44,11 @@ export default function Projects({ projects }) {
                 </span>
               </div>
 
-              {/* Thumbnail */}
+              {/* ✅ Thumbnail - កែសម្រួលរួច */}
               <div className="relative h-56 w-full overflow-hidden bg-gray-200 dark:bg-gray-900">
                 {p.thumbnail ? (
                   <img
-                    src={`${import.meta.env.VITE_STORAGE_URL}/${p.thumbnail}`}
+                    src={p.thumbnail} // ប្រើ URL ផ្ទាល់ពី Cloudinary
                     alt={p.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
@@ -98,7 +98,18 @@ export default function Projects({ projects }) {
                       View Project
                     </a>
                   )}
-                  
+                  {/* ✅ បន្ថែម GitHub Link ត្រឡប់មកវិញ */}
+                  {p.github_url && (
+                    <a
+                      href={p.github_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-300"
+                    >
+                      <FaGithub />
+                      GitHub
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
