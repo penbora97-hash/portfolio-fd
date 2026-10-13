@@ -116,10 +116,11 @@ export default function Hero({ owner, projects = [], skills = [] }) {
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <a
-              href="#projects"
-              className="flex items-center gap-2 px-6 py-3.5 bg-[#f59e0b] text-black font-semibold rounded-full hover:bg-[#fbbf24] transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+              href="/penbora_CV.pdf"
+              download="penbora_CV.pdf"
+              className="flex items-center gap-2 px-6 py-3.5 border border-gray-300 dark:border-gray-700 text-black dark:text-white font-semibold rounded-full hover:border-[#f59e0b] hover:text-[#f59e0b] transition-all duration-300"
             >
-              EXPLORE MY WORK <FaArrowDown />
+              <FaDownload /> DOWNLOAD CV
             </a>
             <a
               href="/Pen_Bora_CV.pdf"
