@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
-import Tena from  "/public/videos/broken_toy.mp3"
+
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
   // ឈ្មោះ File ត្រូវតែត្រូវគ្នា 100% ជាមួយអ្វីដែលអ្នកដាក់ក្នុង public/music
-  const audioSrc = {Tena};
+    const audioSrc = "/videos/broken_toy.mp3"; 
 
   useEffect(() => {
     // កំណត់ Volume ឱ្យត្រូវតាមចិត្ត (0.0 ដល់ 1.0)
