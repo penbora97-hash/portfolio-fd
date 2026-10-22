@@ -6,7 +6,7 @@ export default function MusicPlayer() {
   const audioRef = useRef(null);
 
   // ឈ្មោះ File ត្រូវតែត្រូវគ្នា 100% ជាមួយអ្វីដែលអ្នកដាក់ក្នុង public/music
-  const audioSrc = "/public/videos/Tena - Broken Toy ft Tep Piseth Remix - (320 Kbps).mp3";
+  const audioSrc = "/public/videos/broken_toy.mp3";
 
   useEffect(() => {
     // កំណត់ Volume ឱ្យត្រូវតាមចិត្ត (0.0 ដល់ 1.0)
