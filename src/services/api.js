@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  // ✅ បើ VITE_API_URL មិនកំណត់ → បង្ហាញ Error ជំនួស Fallback
+  
   baseURL: import.meta.env.VITE_API_URL,
   headers: {
     Accept: "application/json",
@@ -10,14 +10,14 @@ const api = axios.create({
   timeout: 10000,
 });
 
-// ✅ ពិនិត្យថា VITE_API_URL ត្រូវបានកំណត់
+
 if (!import.meta.env.VITE_API_URL) {
   console.error(
     "❌ VITE_API_URL is not defined! Please check your Environment Variables.",
   );
 }
 
-// ភ្ជាប់ Token ទៅរាល់ Request
+
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");

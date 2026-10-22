@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ThemeToggle from "../UI/ThemeToggle";
+import MusicPlayer from "../MusicPlayer"  ; 
 
 const links = [
   { href: "#about", label: "About" },
@@ -60,9 +61,9 @@ export default function Navbar({ name }) {
           <span className="text-[#f59e0b]">.</span>
         </a>
 
-        {/* Desktop: Links + ThemeToggle */}
-        <div className="hidden md:flex items-center gap-10">
-          <ul className="flex gap-10">
+        {/* Desktop: Links + Music + ThemeToggle */}
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex gap-8">
             {links.map((l) => {
               const isActive = activeSection === l.href.replace("#", "");
               return (
@@ -81,11 +82,17 @@ export default function Navbar({ name }) {
               );
             })}
           </ul>
-          <ThemeToggle />
+
+          {/* ដាក់ MusicPlayer និង ThemeToggle ជាប់គ្នា */}
+          <div className="flex items-center gap-4 border-l border-gray-300 dark:border-gray-700 pl-6">
+            <MusicPlayer />
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* Mobile: ThemeToggle + Menu */}
+        {/* Mobile: Music + ThemeToggle + Menu */}
         <div className="md:hidden flex items-center gap-3">
+          <MusicPlayer />
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
